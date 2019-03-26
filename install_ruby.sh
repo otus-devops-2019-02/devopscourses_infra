@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo "Update system..."
 sudo apt update -y
 echo "Install Ryby and Ruby Bundler...."

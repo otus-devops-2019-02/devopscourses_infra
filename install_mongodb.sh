@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo "Add key"
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
 echo "Add repo"
