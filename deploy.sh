@@ -1,9 +1,9 @@
-#! /bin/bash
+#!/bin/bash
 
-echo "Deploy app..."
+echo "clone app code"
 git clone -b monolith https://github.com/express42/reddit.git
-cd reddit && bundle install
-
-echo "Run app..."
+echo "Cd Raddit dir  and install bundle..."
+cd reddit/ 
+bundle install
 puma -d
 
