@@ -15,7 +15,7 @@ sudo systemctl enable mongod
 echo "Check Mongo..."
 sudo systemctl status mongod
 echo "Install Ryby and Ruby Bundler...."
-sudo apt install -y ruby-full ruby-bundler build-essentia -y
+sudo apt install -y ruby-full ruby-bundler build-essential
 dir=~/
 echo "clone app code"
 git clone -b monolith https://github.com/express42/reddit.git

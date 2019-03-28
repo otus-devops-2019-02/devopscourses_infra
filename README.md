@@ -1,6 +1,6 @@
 #devopscourses Infra repository
 
-testapp_IP = 34.76.23.47
+testapp_IP = 34.76.15.144
 testapp_port = 9292
 
 #Create instance with script
