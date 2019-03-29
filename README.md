@@ -1,10 +1,27 @@
-# devopscourses_infra
+#devopscourses Infra repository
 
-Подключение к bastion:
+testapp_IP = 34.76.232.220
+testapp_port = 9292
 
-ssh -i ~/.ssh/appuser appuser@35.206.137.43 
+#Create instance with script
+#!/bin/bash
+gcloud compute instances create reddit-app \
+--boot-disk-size=10GB \
+--image-family ubuntu-1604-lts \
+--image-project=ubuntu-os-cloud \
+--machine-type=g1-small \
+--tags puma-server \
+--restart-on-failure \
+--metadata-from-file startup-script=./startup-script.sh
 
-devopscourses Infra repository
-bastion_IP = 35.206.137.43
-someinternalhost_IP = 10.132.0.3
 
+#Create instance with script
+#!/bin/bash
+gcloud compute instances create reddit-app \
+--boot-disk-size=10GB \
+--image-family ubuntu-1604-lts \
+--image-project=ubuntu-os-cloud \
+--machine-type=g1-small \
+--tags puma-server \
+--restart-on-failure \
+--metadata startup-script-url=https://gist.githubusercontent.com/devopscourses/917f6175f65ed8dc42d96cf948db6d0f/raw/ec3814e3c2c2e412ebd9267d5d1d1e822b386854/startup-script.sh
