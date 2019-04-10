@@ -1,15 +1,26 @@
 {
+ "variables": {
+    "project_id":"",
+    "zone": "",
+    "machine_type": "",
+    "source_image": "",
+    "tags": "puma-server",
+    "ssh_username": ""
+       },
+ 
  "builders": [
    {
     "type": "googlecompute",
-    "project_id": "infra-235208",
+    "project_id": "{{ user `project_id` }}",
     "image_name": "reddit-base-{{timestamp}}",
-    "image_family": "reddit-base",
-    "source_image_family": "ubuntu-1604-lts",
-    "zone": "europe-west1-b",
+    "source_image": "{{ user `source_image` }}",
+    "zone": "{{ user `zone` }}",
+    "machine_type": "{{ user `machine_type` }}",
+    "tags":"{{ user `tags` }}",
     "ssh_username": "appuser",
-    "machine_type": "f1-micro"
-   }
+    "disk_size": "10",
+    "disk_type": "pd-standard"
+	}
  ],
  "provisioners": [
    {
