@@ -4,5 +4,7 @@
      "source_image": "reddit-base-123456789",
      "machine_type": "f1-micro"
      "tags": "puma-server",
-     "ssh_username": "user"
+     "ssh_username": "userapp"
   }
+  
+  
