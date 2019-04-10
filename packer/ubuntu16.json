@@ -1,13 +1,13 @@
 {
- "variables": {
+  "variables":{
     "project_id":"",
     "zone": "",
     "machine_type": "",
     "source_image": "",
     "tags": "puma-server",
     "ssh_username": ""
-       },
- 
+  },
+     
  "builders": [
    {
     "type": "googlecompute",
