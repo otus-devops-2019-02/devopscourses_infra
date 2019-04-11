@@ -1,27 +1,20 @@
-#devopscourses Infra repository
+Create VM image with Packer
+    -  create packer template ubuntu16.json
+    -  create settings template variables.json
+    -  create images
 
-testapp_IP = 34.76.232.220
-testapp_port = 9292
+Create base image reddit-base (ruby+mongo)
 
-#Create instance with script
-#!/bin/bash
-gcloud compute instances create reddit-app \
---boot-disk-size=10GB \
---image-family ubuntu-1604-lts \
---image-project=ubuntu-os-cloud \
---machine-type=g1-small \
+packer build --var-file variables.json ubuntu16.json
+
+Create full image reddit-full (ruby+mongo+app)
+
+packer build --var-file variables.json immutable.json
+
+Autocreate instanse create-reddit-vm.sh
+
+gcloud compute instances create reddit-full \
+--image=reddit-full-1553653135 \
 --tags puma-server \
 --restart-on-failure \
---metadata-from-file startup-script=./startup-script.sh
-
-
-#Create instance with script
-#!/bin/bash
-gcloud compute instances create reddit-app \
---boot-disk-size=10GB \
---image-family ubuntu-1604-lts \
---image-project=ubuntu-os-cloud \
---machine-type=g1-small \
---tags puma-server \
---restart-on-failure \
---metadata startup-script-url=https://gist.githubusercontent.com/devopscourses/917f6175f65ed8dc42d96cf948db6d0f/raw/ec3814e3c2c2e412ebd9267d5d1d1e822b386854/startup-script.sh
+--machine-type=f1-micro \
