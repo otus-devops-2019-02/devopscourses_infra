@@ -1,0 +1,8 @@
+ {
+     "project_id": "infra-235208",
+     "zone": "europe-west1-d",
+     "source_image": "reddit-base-1553870640",
+     "machine_type": "f1-micro",
+     "tags": "puma-server",
+     "ssh_username": "appuser"
+  }
