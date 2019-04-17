@@ -5,3 +5,4 @@ devopscourses Infra repository
 - identified input vars for private key & zone 
 - identified output vars with ext ip vm's
 - formated all conf files with 'terraform fmt' command
+
