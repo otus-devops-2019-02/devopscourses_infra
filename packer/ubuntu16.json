@@ -4,7 +4,7 @@
     "zone": "",
     "machine_type": "",
     "source_image": "",
-    "tags": "puma-server",
+    "tags": "",
     "ssh_username": ""
   },
 
@@ -19,7 +19,6 @@
     "zone": "{{ user `zone` }}",
     "machine_type": "{{ user `machine_type` }}",
     "tags":"{{ user `tags` }}",
-
     "ssh_username": "appuser",
     "disk_size": "10",
     "disk_type": "pd-standard"
