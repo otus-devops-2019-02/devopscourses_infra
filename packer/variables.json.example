@@ -1,5 +1,8 @@
-{
-"var_project_id": "test-1111111",
-"var_source_image_family": "ubuntu-micro",
-"var_machine_type": "f1-micro-micro"
-}
+ {
+     "project_id": "infra-XXXXXX",
+     "zone": "europe-west1-d",
+     "source_image": "reddit-base-1553870640",
+     "machine_type": "f1-micro",
+     "tags": "puma-server",
+     "ssh_username": "appuser"
+  }

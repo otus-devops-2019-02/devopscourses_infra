@@ -17,3 +17,7 @@ variable public_key_path {
 variable disk_image {
   description = "Disk image"
 }
+variable zone {
+  description = "Zone"
+    default     = "europe-west1"
+}
