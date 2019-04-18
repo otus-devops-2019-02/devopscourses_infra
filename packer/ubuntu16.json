@@ -5,7 +5,7 @@
     "machine_type": "",
     "source_image": "",
     "tags": "",
-    "ssh_username": ""
+    "ssh_username": "appuser"
   },
 
      
