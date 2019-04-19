@@ -1,5 +1,6 @@
 
 # devopscourses_infra
+terraform-2
 devopscourses Infra repository
 - install terraform
 - create terraform configuration files
