@@ -1,31 +1,31 @@
-resource "google_compute_instance" "db" {
-name = "reddit-db"
-machine_type = "g1-small"
-zone = "${var.zone}"
-tags = ["reddit-db"]
-boot_disk {
-initialize_params {
-image = "${var.db_disk_image}"
-}
-}
-network_interface {
-network = "default"
-access_config = {}
-}
-metadata {
-ssh-keys = "appuser:${file(var.public_key_path)}"
-}
-}
-# Правило firewall
-resource "google_compute_firewall" "firewall_mongo" {
-name = "allow-mongo-default"
-network = "default"
-allow {
-protocol = "tcp"
-ports = ["27017"]
-}
-target_tags = ["reddit-db"]
-source_tags = ["reddit-app"]
-}
+{
+  "variables":{
+    "project_id":"",
+    "zone": "",
+    "machine_type": "",
+    "source_image": "",
+    "tags": "",
+    "ssh_username": "appuser"
+  },
 
+  "builders": [
+    {
+      "type": "googlecompute",
+      "project_id": "{{user `project_id`}}",
+      "image_name": "reddit-db-base-{{timestamp}}",
+      "image_family": "reddit-db-base",
+      "source_image": "{{user `source_image`}}",
+      "zone": "europe-west1-d",
+      "ssh_username": "appuser",
+      "machine_type": "{{user `machine_type`}}"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "scripts/install_mongodb.sh",
+      "execute_command": "sudo {{.Path}}"
+    }
+  ]
+}
 

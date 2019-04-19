@@ -14,7 +14,7 @@ resource "google_compute_instance" "app" {
     network = "default"
 
     access_config = {
-      #      nat_ip = "${google_compute_address.app_ip.address}"
+#      nat_ip = "${google_compute_address.app_ip.address}"
     }
   }
 
@@ -23,9 +23,9 @@ resource "google_compute_instance" "app" {
   }
 }
 
-#
-#resource "google_compute_address" "app_ip" {
-#  name = "reddit-app-ip-${var.inst_suff}"
-#}
+
+resource "google_compute_address" "app_ip" {
+  name = "reddit-app-ip-${var.inst_suff}"
+}
 
 
