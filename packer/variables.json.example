@@ -1,7 +1,8 @@
- {
-  "project_id": "test-XXXXX",
-  "source_image_family": "ubuntu-XXXX",
-  "machine_type": "f1-micro-XXXX"
- }
- 
- 
+{
+    "project_id":"infra-1234567",
+    "zone": "europe-west1-d",
+    "machine_type": "f1-micro",
+    "source_image": "ubuntu-1604-xenial-v20190411",
+    "tags": "puma-server",
+    "ssh_username": "user"
+}
