@@ -42,6 +42,6 @@ variable db_disk_image {
 
 variable inst_suff {
   description = "Suffix for instances"
-  default     = "undef"
+  default     = "stage"
 }
 
