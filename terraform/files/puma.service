@@ -1,13 +1,12 @@
 [Unit]
-Description=puma server
+Description=Puma HTTP Server
 After=network.target
 
 [Service]
 Type=simple
 User=appuser
-WorkingDirectory=/home/appuser/reddit/
-ExecStart=/usr/local/bin/puma
-TimeoutSec=15
+WorkingDirectory=/home/appuser/reddit
+ExecStart=/bin/bash -lc 'puma'
 Restart=always
 
 [Install]

@@ -4,12 +4,14 @@
     "zone": "",
     "machine_type": "",
     "source_image": "",
-    "tags": "puma-server",
-    "ssh_username": ""
+    "tags": "",
+    "ssh_username": "appuser"
   },
+
      
  "builders": [
    {
+
     "type": "googlecompute",
     "project_id": "{{ user `project_id` }}",
     "image_name": "reddit-base-{{timestamp}}",
@@ -35,3 +37,4 @@
   }
  ]
 }
+

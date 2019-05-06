@@ -1,20 +1,10 @@
-Create VM image with Packer
-    -  create packer template ubuntu16.json
-    -  create settings template variables.json
-    -  create images
 
-Create base image reddit-base (ruby+mongo)
+# devopscourses_infra
+terraform-2
+devopscourses Infra repository
+- install terraform
+- create terraform configuration files
+- identified input vars for private key & zone 
+- identified output vars with ext ip vm's
+- formated all conf files with 'terraform fmt' command
 
-packer build --var-file variables.json ubuntu16.json
-
-Create full image reddit-full (ruby+mongo+app)
-
-packer build --var-file variables.json immutable.json
-
-Autocreate instanse create-reddit-vm.sh
-
-gcloud compute instances create reddit-full \
---image=reddit-full-1554908240 \
---tags puma-server \
---restart-on-failure \
---machine-type=f1-micro \
