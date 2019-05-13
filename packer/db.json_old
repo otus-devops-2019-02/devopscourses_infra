@@ -12,20 +12,19 @@
     {
       "type": "googlecompute",
       "project_id": "{{user `project_id`}}",
-      "image_name": "reddit-app-base-{{timestamp}}",
-      "image_family": "reddit-app-base",
+      "image_name": "reddit-db-base-{{timestamp}}",
+      "image_family": "reddit-db-base",
       "source_image": "{{user `source_image`}}",
       "zone": "europe-west1-d",
       "ssh_username": "appuser",
       "machine_type": "{{user `machine_type`}}"
     }
   ],
-  
   "provisioners": [
     {
-      "type": "ansible",
-      "playbook_file": "ansible/packer_app.yml",
-      "user" : "{{ user `ssh_username` }}"
+      "type": "shell",
+      "script": "scripts/install_mongodb.sh",
+      "execute_command": "sudo {{.Path}}"
     }
   ]
 }
