@@ -24,7 +24,8 @@ inst_suff       = "prod"
 }
 module "vpc" {
 source = "../modules/vpc"
-source_ranges = ["82.155.222.156/32"]
+#source_ranges = ["82.155.222.156/32"]
+source_ranges = ["0.0.0.0/0"]
 inst_suff       = "prod"
 }
 
