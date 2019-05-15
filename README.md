@@ -4,25 +4,6 @@
 •	Пересоздан stage
 •	Обновлены ip адреса 
 
-•	Окружения
-•	Созданы окружения pros, stage.  stage по умолчанию
-•	Определены переменные для окружений
-•	Проверка конфигурационных файлов пакера и изменены пути к плейбукам
-•	Пересоздано окружение stage
-•	Обновлены ip адреса 
-
-•	Работа с Community-ролями
-•	Add jdauphant.nginx and make config
-•	Add vpc rule for tcp/80 for app
-•	Add role jdauphant.nginx
-•	Apply playbook
-
-•	Работа с Ansible Vault
-•	Создали конфигурационные файлы для шифрования данных
-•	Зашифровали файлы
-•	Проверка и запуск плейбука
-
-
 # ansible-2
 •	Создан плейбук reddit_app.
 •	Создан шаблон mongod.conf.j2 в папке templates.
