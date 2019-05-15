@@ -1,5 +1,9 @@
+#ansible-3 
+•	Созданы директории с ролями для app,db. mkdir roles; cd roles ansible-galaxy init app ansible-galaxy init db
+•	Подготовилены конфигурационные файлы для app,db
+•	Пересоздан stage
+•	Обновлены ip адреса 
 
-# devopscourses_infra
 # ansible-2
 •	Создан плейбук reddit_app.
 •	Создан шаблон mongod.conf.j2 в папке templates.

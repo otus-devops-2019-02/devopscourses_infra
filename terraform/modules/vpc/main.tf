@@ -39,3 +39,16 @@ resource "google_compute_firewall" "firewall_mongo" {
   target_tags = ["reddit-db"]
 }
 
+resource "google_compute_firewall" "firewall_nginx" {
+  name    = "allow-nginx-default-${var.inst_suff}"
+  network = "default"
+
+  allow {
+    protocol = "tcp"
+
+    ports = ["80"]
+  }
+
+  source_ranges = ["0.0.0.0/0"]
+  target_tags   = ["reddit-app"]
+}
