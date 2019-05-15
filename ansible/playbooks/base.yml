@@ -1,0 +1,12 @@
+- name: install python
+  hosts: all
+  become: true
+  gather_facts: False
+  vars:
+    packages:
+      - python
+  tasks:
+    - name: install python
+      raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+      changed_when: False
+
